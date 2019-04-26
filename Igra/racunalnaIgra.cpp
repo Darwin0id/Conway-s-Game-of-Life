@@ -3,13 +3,21 @@
 #include <random>
 #include <chrono>
 
+//DF KONSTRUKTOR
 racunalnaIgra::racunalnaIgra()
 {
 	srand(time(NULL));
-	this->velicinaRedaka = 8;
-	this->velicinaStupaca = 8;
 }
 
+//DODATAN KONSTRUKTOR
+racunalnaIgra::racunalnaIgra(char zivaStanica, char mrtvaStanica)
+{
+	srand(time(NULL));
+	this->zivaStanica = zivaStanica;
+	this->mrtvaStanica = mrtvaStanica;
+}
+
+//POKRENI IGRU
 std::string racunalnaIgra::pokreniIgru(int velicinaRedaka, int velicinaStupaca)
 {
 		this->velicinaRedaka = velicinaRedaka;
@@ -28,6 +36,7 @@ std::string racunalnaIgra::pokreniIgru(int velicinaRedaka, int velicinaStupaca)
 		return vratiPlocu(matrica);
 }
 
+//VRATI CRTAKNU PLOCU
 std::string racunalnaIgra::vratiPlocu(std::vector<std::vector<char>> const &mat)
 {
 	std::stringstream bacva;
@@ -42,6 +51,7 @@ std::string racunalnaIgra::vratiPlocu(std::vector<std::vector<char>> const &mat)
 	return bacva.str();
 }
 
+//VRATI MI RANDOM 25%
 bool racunalnaIgra::vratiRandomBroj()
 {
 	auto funkcija1 = []() -> int {return rand() & 1;};
@@ -50,6 +60,7 @@ bool racunalnaIgra::vratiRandomBroj()
 	return 1 - (funkcija2());
 }
 
+//AZURIRAJ IGRU
 std::string racunalnaIgra::azurirajIgru()
 {
 	std::stringstream bacva;
@@ -88,6 +99,7 @@ std::string racunalnaIgra::azurirajIgru()
 	return bacva.str();
 }
 
+//PREBROJI MI SUSJEDE
 int racunalnaIgra::brojSusjeda(int i, int j)
 {
 	int brojac = 0;

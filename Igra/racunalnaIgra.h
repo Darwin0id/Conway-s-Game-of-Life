@@ -1,5 +1,4 @@
 #pragma once
-#include "tockaStanice.h"
 #include <sstream>
 #include <string>
 #include <vector>
@@ -18,6 +17,7 @@ private:
 public:
 	//ZADANE POSTAVKE
 	racunalnaIgra();
+	racunalnaIgra(char zivaStanica, char mrtvaStanica);
 	racunalnaIgra& operator=(const racunalnaIgra&) = delete;
 
 	//GLAVNA KARAKTERSITIKA POKRETANJA IGRE

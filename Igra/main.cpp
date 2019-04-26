@@ -8,7 +8,7 @@
 int main()
 {
 	racunalnaIgra novaInstanca;
-	std::cout << novaInstanca.pokreniIgru(60, 60);
+	std::cout << novaInstanca.pokreniIgru(20, 20);
 
 	for (;;)
 	{
